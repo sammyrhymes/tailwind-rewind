@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss"></style>
+    <title>Layout Concepts</title>
+  </head>
+  <body>
+    <div class="py-20 min-h-screen bg-gray-200">
+      <div class="container border mx-auto">
+        <div class="bg-white p-10 relative rounded-lg shadow-lg">
+          <!-- absolute label -->
+          <div
+            class="absolute top-0 right-0 px-4 py-2 bg-red-500 text-red-100 transform translate-x-2 -translate-y-2 text-xs rounded"
+          >
+            Brand New
+          </div>
+
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit
+            quas recusandae, fuga maiores neque corporis quasi repudiandae ex
+            delectus itaque optio ratione quaerat! Dolore deleniti unde incidunt
+            hic ipsum dolorum.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="min-h-screen bg-blue-200 p-8 md:p-20">
+      <h2
+        class="text-6xl text-black md:text-red-500 lg:text-blue-800 xl:text-white"
+      >
+        Mobile First
+      </h2>
+      <h2 class="text-3xl md:text-4xl lg:text-6xl">
+        Different Sizes per Device
+      </h2>
+      <!-- STACKING VS SIDE-VY-SIDE -->
+
+      <div class="md:flex md:space-x-8">
+        <div class="md:w-1/2 p-10 bg-white mt-10">On Mobile We Stack</div>
+        <div class="md:w-1/2 p-10 bg-white mt-10">
+          On desktop, We are side by side
+        </div>
+      </div>
+    </div>
+
+    <!-- Flexbox -->
+    <div class="bg-gray-200 min-h-screen">
+        <!-- centering -->
+         <div class="bg-green-700 h-64 flex justify-center items-center text-gray-200">
+            <h2 class="text-4xl">Centered!</h2>
+         </div>
+         <div class="bg-gray-300 p-10 font-bold flex justify-between">
+            <div class="logo">logo</div>
+            <div>navigation</div>
+         </div>
+         <div class="p-10 bg-yellow-500 md:flex md:space-x-8 space-y-8">
+            <div class="bg-white p-2 flex-shrink">hello</div>
+            <div class="bg-white p-2 flex-grow">hello</div>
+            <div class="bg-white p-2 flex-grow">hello</div>
+         </div>
+
+         <!-- sidebar -->
+
+         <div class="bg-teal-700 h-64">
+            <div class="md:flex items-center items-stretch h-full">
+                <div class="md:block hidden bg-orange-500 md:w-1/5 p-10">sidebar</div>
+                <div class="bg-teal-500 p-10 md:flex-grow">content</div>
+            </div>
+         </div>
+
+    </div>
+
+    <!-- grid in tailwind -->
+    <div class="min-h-screen bg-black ">
+        <div class="p-20 bg-green-200 text-green-800 grid grid-cols-3 gap-2">
+            <div class="bg-green-100 rounded p-5 shadow-lg">card 1</div>
+            <div class="bg-green-100 rounded p-5 shadow-lg">card 2</div>
+            <div class="bg-green-100 rounded p-5 shadow-lg">card 3</div>
+            <div class="bg-green-100 rounded p-5 shadow-lg">card 4</div>
+            <div class="bg-green-100 rounded p-5 shadow-lg">card 5</div>
+            <div class="bg-green-100 rounded p-5 shadow-lg">card 6</div>
+        </div>
+        <div class="p-20 bg-teal-200 text-teal-800 grid grid-cols-3 grid-rows-3 gap-3">
+            <div class="bg-teal-100 rounded p-5 shadow-lg">card 1</div>
+            <div class="bg-teal-100 rounded p-5 shadow-lg row-span-2">card 2</div>
+            <div class="bg-teal-100 rounded p-5 shadow-lg">card 3</div>
+            <div class="bg-teal-100 rounded p-5 shadow-lg row-span-2">card 4</div>
+            <div class="bg-teal-100 rounded p-5 shadow-lg row-span-2">card 5</div>
+            <div class="bg-teal-100 rounded p-5 shadow-lg">card 6</div>
+        </div>
+        <div class="p-20 bg-orange-200 text-orange-800 grid grid-cols-4 grid-rows-3 gap-2">
+            <div class="bg-orange-100 rounded p-5 shadow-lg row-span-3">image</div>
+            <div class="bg-orange-100 rounded p-5 shadow-lg col-span-2 row-span-2 flex justify-center items-center">content</div>
+            <div class="bg-orange-100 rounded p-5 shadow-lg row-span-2">something</div>
+            <div class="bg-orange-100 rounded p-5 shadow-lg row-start-3 col-start-2 col-span-3">footer</div>
+        </div>
+        
+    </div>
+
+    <!-- notes:
+
+    when psoitioning an element you can use absolute which allows for manual setting on the ui
+    This automatically assigns the main window as relative and you can use top-x, right, left, bottom
+    to get it to position. if you want to assign it to a bosition on the immediate parent element use 
+    relative on the parent element. 
+
+    you can also use transform translate-x-2 and -translate-y-2 to futher position it. -->
+  </body>
+</html>
